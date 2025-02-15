@@ -5,15 +5,24 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-
+/**
+ * Gerenciador de banco de dados para conexão e operações com MySQL.
+ * Implementa o padrão Singleton para garantir uma única instância da conexão.
+ */
 public class DatabaseManager {
     private static final String URL = "jdbc:mysql://localhost:3306/gerador_senhas";
     private static final String USER = "root";
-    private static final String PASSWORD = ""; // Substitua pela sua senha do MySQL
+    private static final String PASSWORD = ""; // Substitua pela senha do seu MySQL
 
     private static DatabaseManager instance;
     private Connection connection;
 
+    /**
+     * Construtor privado para evitar múltiplas instâncias.
+     * Inicializa a conexão com o banco de dados.
+     *
+     * @throws RuntimeException Se houver falha na conexão com o banco de dados.
+     */
     private DatabaseManager() {
         try {
             this.connection = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -22,6 +31,11 @@ public class DatabaseManager {
         }
     }
 
+    /**
+     * Retorna a instância única do DatabaseManager.
+     *
+     * @return Instância única do DatabaseManager.
+     */
     public static DatabaseManager getInstance() {
         if (instance == null) {
             synchronized (DatabaseManager.class) {
@@ -33,6 +47,13 @@ public class DatabaseManager {
         return instance;
     }
 
+    /**
+     * Salva um usuário no banco de dados.
+     *
+     * @param usuario   Nome do usuário.
+     * @param senhaHash Hash da senha gerado.
+     * @param algoritmo Algoritmo utilizado para gerar o hash.
+     */
     public void salvarUsuario(String usuario, String senhaHash, String algoritmo) {
         String sql = "INSERT INTO usuarios (usuario, senha_hash, algoritmo) VALUES (?, ?, ?)";
     
@@ -52,6 +73,10 @@ public class DatabaseManager {
         }
     }
     
+    /**
+     * Fecha a conexão com o banco de dados.
+     * Deve ser chamado quando a aplicação não precisar mais da conexão.
+     */
     public void fecharConexao() {
         if (connection != null) {
             try {
