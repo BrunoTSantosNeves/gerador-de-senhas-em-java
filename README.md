@@ -114,8 +114,64 @@ Para executar os testes unitários:
 mvn test
 ```
 
-## Contribuição
-Se deseja contribuir com o projeto, consulte nosso [Guia de Contribuição](CONTRIBUTING.md).
+# Guia de Contribuição
+
+Obrigado por considerar contribuir para este projeto! Siga as diretrizes abaixo para garantir um fluxo de trabalho organizado e eficiente.
+
+## Como Contribuir
+
+1. **Fork o repositório**: Clique no botão "Fork" no GitHub.
+2. **Clone o repositório**: No seu terminal, execute:
+   ```sh
+   git clone https://github.com/seu-usuario/gerador-de-senhas.git
+   ```
+3. **Crie uma branch para sua contribuição**:
+   ```sh
+   git checkout -b minha-nova-feature
+   ```
+4. **Faça suas modificações** e garanta que elas estejam bem documentadas.
+5. **Teste suas mudanças** antes de abrir um PR (Pull Request).
+6. **Commit suas alterações**:
+   ```sh
+   git commit -m "Descrição clara da alteração"
+   ```
+7. **Envie para o seu fork**:
+   ```sh
+   git push origin minha-nova-feature
+   ```
+8. **Abra um Pull Request**: Vá até o repositório original no GitHub e crie um PR a partir da sua branch.
+
+## Convenções de Código
+
+- Siga as boas práticas do Java.
+- Utilize **nomes descritivos** para variáveis, métodos e classes.
+- Documente seu código com **Javadoc**.
+- Formate o código utilizando **o padrão do projeto**.
+
+## Revisão de Código
+
+Todos os Pull Requests passarão por revisão antes de serem mesclados ao branch principal. Fique atento aos comentários e sugestões dos revisores.
+
+## Relatando Problemas
+
+Se encontrar um bug ou tiver uma sugestão de melhoria, abra uma [issue](https://github.com/seu-usuario/gerador-de-senhas/issues) e descreva o problema de forma clara.
+
+## Futuras Melhorias
+
+Aqui estão algumas sugestões de melhorias para o projeto:
+- **Adição de suporte a mais algoritmos de hashing** (exemplo: Argon2).
+- **Implementação de uma interface gráfica** para facilitar o uso.
+- **Internacionalização (i18n)** para suportar múltiplos idiomas.
+- **Melhoria nos testes unitários e cobertura de código**.
+- **Criação de um sistema de recuperação de senhas criptografadas**.
+- **Integração com serviços externos de autenticação** (OAuth, JWT, etc.).
+
+Fique à vontade para contribuir com essas melhorias ou sugerir novas ideias!
+
+---
+Siga estas diretrizes para manter a qualidade e organização do projeto. Boa contribuição! 🚀
+
+
 
 ## Licença
 Este projeto está licenciado sob a MIT License - consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
